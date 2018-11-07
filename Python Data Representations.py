@@ -29,6 +29,20 @@ print(count_vowels("aovvouOucvicIIOveeOIclOeuvvauouuvciOIsle"))
 Week2
 """
 """
+Select the code snippets below in which \color{red}{\verb|list2|}list2 is a copy of list \color{red}{\verb|list1|}list1 (as opposed to simply being another reference to the list \color{red}{\verb|list1|}list1).
+"""
+list1 = list(range(1, 10))
+list2 = list1
+print(list1," ",list2)
+list2[0]=3
+print(print(list1," ",list2))
+"""
+[1, 2, 3, 4, 5, 6, 7, 8, 9]   [1, 2, 3, 4, 5, 6, 7, 8, 9] 
+[3, 2, 3, 4, 5, 6, 7, 8, 9]   [3, 2, 3, 4, 5, 6, 7, 8, 9]
+So list2 is exact the list1. The list2 is considered "reference" that points to list1. Any changes in the list under either variable name will be reflected in the other.
+(Thank Patrick Dennis, MD for his kind answer)
+"""
+"""
 Write a function \color{red}{\verb|strange_sum(numbers)|}strange_sum(numbers) that takes a list of integers and returns the sum of those items in the list that are not divisible by 33. When you are done, test your function using the code snippet below.
 """
 def strange_sum(alist):
