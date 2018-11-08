@@ -55,3 +55,44 @@ def strange_sum(alist):
 
 print(strange_sum([1, 2, 3, 4, 5, 1, 2, 3, 4, 5]))
 print(strange_sum(list(range(123)) + list(range(77))))
+
+
+"""
+Week3
+"""
+"""
+Given a list \color{red}{\verb|fib = [0, 1]|}fib=[0,1], write a loop that appends the sum of the last two items in \color{red}{\verb|fib|}fib to the end of \color{red}{\verb|fib|}fib. What is the value of the last item in \color{red}{\verb|fib|}fib after twenty iterations of this loop? Enter the answer below as an integer.
+
+As a check, the value of the last item in \color{red}{\verb|fib|}fib after ten iterations is 89.
+"""
+def mysum(lst,iteMax):
+    templist=lst[:]
+    sum=0
+    for i in range(iteMax):
+        lastsum=templist[-2]+templist[-1]
+        templist.append(lastsum)
+    return lastsum
+fib=[0,1]
+print(mysum(fib,10))
+print(mysum(fib,20))
+"""
+One of the first examples of an algorithm was the Sieve of Eratosthenes. This algorithm computes all prime numbers up to a specified bound. The provided code below implements all but the innermost loop for this algorithm in Python. Review the linked Wikipedia page and complete this code.
+"""
+"""
+Implement the Sieve of Eratosthenes
+https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+"""
+
+def compute_primes(bound):
+    """
+    Return a list of the prime numbers in range(2, bound)
+    """
+    
+    answer = list(range(2, bound))
+    for divisor in range(2, bound):
+        # Remove appropriate multiples of divisor from answer
+        pass
+    return answer
+
+print(len(compute_primes(200)))
+print(len(compute_primes(2000)))
