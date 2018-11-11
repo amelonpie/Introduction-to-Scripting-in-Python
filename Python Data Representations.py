@@ -29,6 +29,12 @@ print(count_vowels("aovvouOucvicIIOveeOIclOeuvvauouuvciOIsle"))
 Week2
 """
 """
+Write a Python expression that creates a list of length 16 whose first 8 entries are \color{red}{\verb|True|}True and whose last 8 entries are \color{red}{\verb|False|}False . Note that your answer should not include more than one instance of \color{red}{\verb|True|}True and one instance of \color{red}{\verb|False|}False in the expression used to create the list. 
+"""
+truefalse_list =[True] * 8 + [False] * 8
+print(truefalse_list)
+#This example tells that the list object can be formed by "add". And the repetition number of element should be outside the list expression.
+"""
 Select the code snippets below in which \color{red}{\verb|list2|}list2 is a copy of list \color{red}{\verb|list1|}list1 (as opposed to simply being another reference to the list \color{red}{\verb|list1|}list1).
 """
 list1 = list(range(1, 10))
