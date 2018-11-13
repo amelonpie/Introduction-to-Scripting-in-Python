@@ -89,6 +89,28 @@ print(strange_sum(list(range(123)) + list(range(77))))
 """
 Week3
 """
+
+"""
+Given a list \color{red}{\verb|example_list|}example_list containing at least 4 elements, write an expression that replaces the second and third elements of the list by the list \color{red}{\verb|[0, 0, 0]|}[0,0,0] . 
+Shortly - Update a slice of a list
+"""
+example_list = [2, 3, 5, 7, 11, 13]
+print(example_list)
+example_list[1:2]=[0,0]
+print(example_list)
+#This Slice Updata part tells that lst[num]=[item1,item2,...] will create a new list inside the list lst
+#Using lst[num:num+1]=[item1,item2,...] instead have the effect of "replace" multiple items on one given position.
+#For extend multiple items to the end of the list, using lst.extend([item1,item2,...])
+#list.append() adds the argument as an object, list.extend() adds the context of the sequence.
+#If need to create a new list from the original one, use new_list = old_list + [item1,item2,...]
+
+"""
+Using loop to append item to the list
+"""
+for number in [0, 0, 0]:
+    example_list.append(number)    
+print(example_list)
+
 """
 Given a list \color{red}{\verb|fib = [0, 1]|}fib=[0,1], write a loop that appends the sum of the last two items in \color{red}{\verb|fib|}fib to the end of \color{red}{\verb|fib|}fib. What is the value of the last item in \color{red}{\verb|fib|}fib after twenty iterations of this loop? Enter the answer below as an integer.
 As a check, the value of the last item in \color{red}{\verb|fib|}fib after ten iterations is 89.
@@ -124,3 +146,9 @@ def compute_primes(bound):
 
 print(len(compute_primes(200)))
 print(len(compute_primes(2000)))
+
+
+
+"""
+Week4
+"""
