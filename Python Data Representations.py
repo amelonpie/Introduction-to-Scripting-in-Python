@@ -25,6 +25,7 @@ print(count_vowels("aaassseefffgggiiijjjoOOkkkuuuu"))
 print(count_vowels("aovvouOucvicIIOveeOIclOeuvvauouuvciOIsle"))
 
 
+
 """
 Week2
 """
@@ -34,6 +35,27 @@ Write a Python expression that creates a list of length 16 whose first 8 entries
 truefalse_list =[True] * 8 + [False] * 8
 print(truefalse_list)
 #This example tells that the list object can be formed by "add". And the repetition number of element should be outside the list expression.
+
+"""
+Challenge: Write a Python function \color{red}{\verb|concatenate_ints(int_list)|}concatenate_ints(int_list) that takes a list of non-negative integers \color{red}{\verb|int_list|}int_list and returns a single integer formed by concatenating the digits of the integer in the list. For example, \color{red}{\verb|list_to_int([11, 33, 50])|}list_to_int([11,33,50]) should return the integer \color{red}{\verb|113350|}113350.
+"""
+def concatenate_ints(int_list):
+    """
+    Given a list of integers int_list, return the integer formed by
+    concatenating their decimal digits together
+    """
+    new_list=""
+    for item in int_list:
+        new_list = new_list + str(item)
+    return new_list
+# Tests
+print(concatenate_ints([4]))
+print(concatenate_ints([4, 0, 4]))
+print(concatenate_ints([123, 456, 789]))
+print(concatenate_ints([32, 796, 1000]))
+#This task looks similar to the above one, but different in "string" and [list].
+#String should initiate at "", then concatenate str(item) directly by "+"sign. List is [item] * repetition.
+
 """
 Select the code snippets below in which \color{red}{\verb|list2|}list2 is a copy of list \color{red}{\verb|list1|}list1 (as opposed to simply being another reference to the list \color{red}{\verb|list1|}list1).
 """
@@ -48,6 +70,7 @@ print(print(list1," ",list2))
 So list2 is exact the list1. The list2 is considered "reference" that points to list1. Any changes in the list under either variable name will be reflected in the other.
 (Thank Patrick Dennis, MD for his kind answer)
 """
+
 """
 Write a function \color{red}{\verb|strange_sum(numbers)|}strange_sum(numbers) that takes a list of integers and returns the sum of those items in the list that are not divisible by 33. When you are done, test your function using the code snippet below.
 """
@@ -58,9 +81,9 @@ def strange_sum(alist):
             sum += item
     return sum
 
-
 print(strange_sum([1, 2, 3, 4, 5, 1, 2, 3, 4, 5]))
 print(strange_sum(list(range(123)) + list(range(77))))
+
 
 
 """
@@ -68,7 +91,6 @@ Week3
 """
 """
 Given a list \color{red}{\verb|fib = [0, 1]|}fib=[0,1], write a loop that appends the sum of the last two items in \color{red}{\verb|fib|}fib to the end of \color{red}{\verb|fib|}fib. What is the value of the last item in \color{red}{\verb|fib|}fib after twenty iterations of this loop? Enter the answer below as an integer.
-
 As a check, the value of the last item in \color{red}{\verb|fib|}fib after ten iterations is 89.
 """
 def mysum(lst,iteMax):
@@ -84,11 +106,11 @@ print(mysum(fib,20))
 """
 One of the first examples of an algorithm was the Sieve of Eratosthenes. This algorithm computes all prime numbers up to a specified bound. The provided code below implements all but the innermost loop for this algorithm in Python. Review the linked Wikipedia page and complete this code.
 """
+
 """
 Implement the Sieve of Eratosthenes
 https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 """
-
 def compute_primes(bound):
     """
     Return a list of the prime numbers in range(2, bound)
