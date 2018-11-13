@@ -112,6 +112,56 @@ for number in [0, 0, 0]:
 print(example_list)
 
 """
+Challenge: The items in a list can themselves be lists. These nested lists can be used to represent a wide range of 2D data such as spreadsheet information. Write a function \color{red}{\verb|flatten(nested_list)|}flatten(nested_list) that takes as input the list of lists \color{red}{\verb|nested_list|}nested_list. The function \color{red}{\verb|flaten()|}flaten() should return a list consisting of the items in the sublists of \color{red}{\verb|nested_list|}nested_list all appended together. (See the provided template for example input and output.) 
+Shortly - Flatten a nested list
+"""
+def flatten(nested_list):
+    """
+    Given a list whose items are list, 
+    return the list formed by joining all of these lists
+    """
+    flattened_list=[]
+    for sub_list in nested_list:
+        flattened_list.extend(sub)
+    return flattened_list
+# Test code
+print(flatten([]))
+print(flatten([[]]))
+print(flatten([[1, 2, 3]]))
+print(flatten([["cat", "dog"], ["pig", "cow"]]))
+print(flatten([[9, 8, 7], [6, 5], [4, 3, 2], [1]]))
+#The difference between week2's concatenate_ints and this one is that weeks create an empty string, and this one empty list.
+
+"""
+Challenge: Write a function \color{red}{\verb|remove_duplicates(items)|}remove_duplicates(items) that takes a list \color{red}{\verb|items|}items and returns a new list that consists of all unique items in \color{red}{\verb|items|}items. The items in the returned list should be in the same order as those in \color{red}{\verb|items|}items.
+Shortly - Remove duplicates from a list while preserving the order of items
+"""
+def remove_duplicates(items):
+    """
+    Given a list, return a list with duplicate items removed
+    and the remaining items in the same order
+    """
+#    new_list=list(items)
+#    for item in new_list:
+#        if new_list.count(item) > 1:
+#            new_list.remove(item)
+#    return new_list   #This does not work well for requirement because the order has changed.
+    new_list=[]
+    for item in items:
+        if item not in new_list:
+            new_list.append(item)
+    return new_list
+# Test code
+print(remove_duplicates([]))
+print(remove_duplicates([1, 2, 3, 4]))
+print(remove_duplicates([1, 2, 2, 3, 3, 3, 4, 5, 6, 6]))
+print(remove_duplicates(["cat", "dog", "cat", "pig", "cow", "cat", "pig", "pug"]))
+#The pseud-algorithm is listed as follows:()
+#myList = [1, 2, 3, 1, 2, 5, 6, 7, 8]
+#cleanlist = []
+#[cleanlist.append(x) for x in myList if x not in cleanlist]
+
+"""
 Given a list \color{red}{\verb|fib = [0, 1]|}fib=[0,1], write a loop that appends the sum of the last two items in \color{red}{\verb|fib|}fib to the end of \color{red}{\verb|fib|}fib. What is the value of the last item in \color{red}{\verb|fib|}fib after twenty iterations of this loop? Enter the answer below as an integer.
 As a check, the value of the last item in \color{red}{\verb|fib|}fib after ten iterations is 89.
 """
@@ -125,11 +175,9 @@ def mysum(lst,iteMax):
 fib=[0,1]
 print(mysum(fib,10))
 print(mysum(fib,20))
-"""
-One of the first examples of an algorithm was the Sieve of Eratosthenes. This algorithm computes all prime numbers up to a specified bound. The provided code below implements all but the innermost loop for this algorithm in Python. Review the linked Wikipedia page and complete this code.
-"""
 
 """
+One of the first examples of an algorithm was the Sieve of Eratosthenes. This algorithm computes all prime numbers up to a specified bound. The provided code below implements all but the innermost loop for this algorithm in Python. Review the linked Wikipedia page and complete this code.
 Implement the Sieve of Eratosthenes
 https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 """
