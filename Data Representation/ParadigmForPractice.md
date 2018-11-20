@@ -2,14 +2,14 @@ My paradigm for week4 practice
 Hint: Frequently refer https://docs.python.org/3/library/stdtypes.html#str.split or CodeSkulptor library at py3.codeskupltor.org
 
 Demand:
-PREFIX=<pre class="cm">
-POSTFIX=</pre>
+"PREFIX=<pre class="cm">"
+"POSTFIX=</pre>"
 update pre_block between PREFIX and POSTFIX. pre_block is print xxx
 
 The pseudo-code for update_file(input_file_name, output_file_name)
 READ input_file as a integrated string
-SPLIT with PREFIX, get [content_before_PREFIX, content_after_PREFIX]  (content_after_PREFIX is print xxxPOSTFIX……, indicated as pre_block+post_block)
+SPLIT with PREFIX, get list"[content_before_PREFIX, content1_after_PREFIX1, content2 after PREFIX2, ..., contentN after PREFIXN]"  (content_after_PREFIX is print xxxPOSTFIX……, indicated as pre_block+post_block, we need to split them with POSTFIX)
 LOOP(content_after_PREFIX)
-  SPLIT with POSTFIX, get [pre_block, ……]
+  SPLIT with POSTFIX, get [pre_block, ……] 
   UPDATED_TEXT = content_before_PREFIX + PREFIX + updated_pre_block + POSTFIX + ……
 WRITE output_file with UPDATED_TEXT
