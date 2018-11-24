@@ -1,0 +1,54 @@
+The whole process is arranged in this manner: The program read the two files, compare each line by compare each character of each line,
+until find the the first difference, then print the difference.
+
+The program is written in this manner:
+singleline_diff :       check if the two lines are different, return the index of first index
+singleline_diff_format: print the different index of single line
+multiline_diff  :       
+
+The pseudo-code of each function is listed as follows:
+idx = singleline_diff(line1, line2): RETURN the index of the first difference, or -1 for identical
+  IF line1 == line2: 
+    return IDENTICAL, function end
+  ASSIGN shorter_line and longer_line(DEFAULT: set shorter_line=line1, until it is not the case)
+  COMPARE each charater of shorter_line with longer_line:
+    IF difference takes place: return the index of the difference
+    ELSE does not find the difference: the shorter_line is the first part of longer_line, return the length of shorter_line
+
+show_diff_list = singleline_diff_format(line1, line2, idx): RETURN a three line string indicate the lines and the difference
+    IF either line contains a newline or carriage return character("\n" or "\r" in line1/2, that means CHECK whether the inputs are a single line this time):
+      return ""
+    IF idx == -1: lines are identical
+      return [line1\n, len(line1)*"=", line2\n]
+    ELIF idx in range(0, len(shorter_line)): lines are different
+      return [line1\n, idx * "=" + "^", line2\n]
+    ELSE: idx not in range(0,len(shorter_line)) 
+      return ""
+
+multiline_diff(lines1, lines2): return (tuple) the index1 for different lines, and index2 for different character
+    IF lines1 == lines2: 
+      return (IDENTICAL, IDENTICAL), function end
+    ASSIGN shorter_lines and longer_lines: (DEFAULT: set shorter_lines=lines1, until it is not the case)
+    COMPARE each item in shorter_lines with longer_line, using singleline_diff to check if NOT IDENTICAL:
+      return the index of item and the idx of singleline_diff
+
+get_file_lines(filename): return a list, each item is a line, and delete all the "\n" and "\r"
+    OPEN file
+    READ content one line by one line, and remove "\n" and "\r", insert into list
+    RETURN the list
+    ================UPDATE A NEW STRING METHOD str.splitlines
+    splitlines() 按照行('\r', '\r\n', \n')分隔，返回一个包含各行作为元素的列表，如果参数 keepends 为 False，不包含换行符，如果为 True，则保留换行符。
+    OPEN file
+    READ all content in one string
+    CLOSE file
+    SPLITLINES by '\r', '\r\n', \n' into a list containing multiple items without \r \n
+    RETURN LST
+    
+file_diff_format(filename1, filename2): return a four line string 
+  READ file1 and file2
+  CHECK either of them is empty
+  COMPARE each line using multiline_diff
+  RETURN result
+    
+
+  
